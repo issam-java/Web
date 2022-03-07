@@ -1,0 +1,58 @@
+.DS_STORE
+
+/ dist /
+/ bazel-out
+/ intégration / bazel / bazel- *
+* .log
+node_modules
+
+# Fichier temporaire CircleCI pour le calcul de la clé de cache.
+# Voir `save_month_to_file` dans `.circleci/config.yml`.
+mois.txt
+
+# Inclure lors du développement de packages d'application.
+pubspec.lock
+.c9
+.idée /
+.devcontainer / *
+! .devcontainer / LISEZMOI.md
+! .devcontainer / recommandé-devcontainer.json
+! .devcontainer / recommandé-Dockerfile
+.paramètres /
+.vscode / launch.json
+.vscode / paramètres.json
+.vscode / tâches.json
+* .swo
+* .swp
+modules / .paramètres
+module / .vscode
+.vimrc
+.nvimrc
+
+# Ne pas archiver les fichiers secrets
+* secret.js
+
+# Ignorer le journal de débogage npm/yarn
+npm-debug.log
+fil-erreur.log
+
+# build-analytics
+.build-analytics
+
+# sortie de test cumulatif
+/ modules / rollup-test / dist /
+
+# Paramètres bazel spécifiques à l'utilisateur
+.bazelrc.user
+
+# Paramètres ng-dev spécifiques à l'utilisateur
+.ng-dev.user *
+
+.notes.md
+baseline.json
+
+# Ignorer .history pour l'extension VSCode xyz.local-history
+.l'histoire
+
+# Husky
+.husky / _

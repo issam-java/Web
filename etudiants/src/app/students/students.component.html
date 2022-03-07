@@ -1,0 +1,10 @@
+<li [ngClass]="{'list-group-item': true,
+    'list-group-item-success': studentStatus === 'present',
+    'list-group-item-danger': studentStatus === 'absent'}">
+    
+    <div style="width:20px;height:20px;background-color:rgb(255, 0, 0);" *ngIf="studentStatus === 'absent(e)'"></div>       
+    <h4 [ngStyle]= "{color:getColor()}"> étudiant : {{ studentName }} --Statut:{{ getStatus() }}</h4>
+    <a [routerLink]="[id]" class="btn btn-sm btn-primary">Détail  </a>
+    <button class="btn btn-sm btn-success" *ngIf="studentStatus === 'absent'" (click)="onSwitch()">Présent</button>
+    <button class="btn btn-sm btn-danger" *ngIf="studentStatus === 'present'" (click)="onSwitch()">Absent </button>   
+</li>

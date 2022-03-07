@@ -1,0 +1,36 @@
+<div class="col-sm-8 col-sm-offset-2">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+        <div class="form-group">
+            <label for="firstName" style="color:white">Prénom</label>
+            <input type="text" id="firstName" class="form-control" formControlName="firstName" placeholder= " entrer votre prénom!">
+        </div>
+        <div class="form-group">
+            <label for="lastName" style="color:white">Nom</label>
+            <input type="text" id="lastName" class="form-control" formControlName="lastName" placeholder=" entrer votre nom!">
+        </div>
+        <div class="form-group">
+            <label for="email" style="color:white">Adresse e-mail</label>
+            <input type="text" id="email" class="form-control" formControlName="email" placeholder=" entrer votre e-mail !">
+        </div>
+        <div class="form-group">
+            <label for="diploma" style="color:white">Diplome</label>
+            <input id="diploma" class="form-control" formControlName="diploma" placeholder=" entrer votre diplome !">
+        </div>
+        <div formArrayName="options" style="color:white">
+            <h3>Vos options</h3>
+            <div class="form-group" *ngFor="let optionControl of getOptions().controls; let i = index">
+                <input type="text" class="form-control" [formControlName]="i" placeholder=" ajouter une option !">
+            </div>
+        </div>
+        <ul>
+            <li>
+                <button type="button" class="btn btn-success" (click)="onAddOption()"> Ajouter une option</button>
+            </li>  
+            <li>  
+                <button type="submit" class="btn btn-primary pull-right" [disabled]="userForm.invalid">Valider</button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+  
